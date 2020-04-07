@@ -18,13 +18,15 @@ void signal_handler(int sig)
 		exit(0);
 	}
 }
-int main(int ac, char **av, char **env)
+int main(void)
 {
 	pid_t pid;
+	char *cmd;
 	char *line = NULL;
 	char **args = NULL;
 	int status = 1;
-	ssize_t size = 0, in_line = 0;
+	size_t size = 0;
+	int in_line = 0;
 
 	while (1)
 	{
@@ -32,15 +34,21 @@ int main(int ac, char **av, char **env)
 		if (isatty(STDIN_FILENO))
 			write(STDOUT_FILENO, "$", 2);
 		in_line = getline(&line, &size, stdin);
-		if (in_line == -1)
-			exit(0);
+		if (in_line < 0)
+		{
+			write(STDIN_FILENO, "\n", 1);
+			break;
+		}
 		args = tokenizer(line);
+		if (built_ins(args))
+			continue;
 		pid = fork();
 		if (pid == 0)
 		{
-			if (execve(args[0], args, env) == -1)
+			cmd = findpathof(args[0]);
+			if (execve(cmd, args, NULL) == -1)
 			{
-				perror("fail to execute");
+				perror("Wrong usage");
 				break;
 			}
 		}
@@ -51,5 +59,6 @@ int main(int ac, char **av, char **env)
 	}
 	free(args);
 	free(line);
+	free(cmd);
 	return (0);
 }

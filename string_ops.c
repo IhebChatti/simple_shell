@@ -37,30 +37,29 @@ char *_strcpy(char *dest, char *src)
 }
 
 /**
- *_atoi - function to convert array to integer
- *@s: pointer type char
- *Return: converted int
- */
-int _atoi(char *s)
+*_strdup - function that returns a pointer to newly allocated space in mem
+*@str: pointer type char
+*Return: pointer type char
+*/
+char *_strdup(char *str)
 {
-	unsigned int result = 0;
-	int sign = 1;
 	int i = 0;
+	char *ing;
+	char *temp;
 
-	for (i = 0; s[i] != '\0'; i++)
-	{
-		if (s[i] == '-')
-		{
-			sign *= -1;
-		}
-		else if (s[i] >= '0' && s[i] <= '9')
-		{
-			result = result * 10 + (s[i] - '0');
-			if (!(s[i + 1] >= '0' && s[i + 1] <= '9'))
-				break;
-		}
-	}
-	return (sign * result);
+	if (str == NULL)
+		return (NULL);
+	while (str[i])
+		i++;
+	ing = malloc(i + 1);
+	temp = ing;
+	if (ing == NULL)
+		return (NULL);
+	while (*str)
+		*temp++ = *str++;
+	*temp = '\0';
+	return (ing);
+	free(ing);
 }
 
 /**

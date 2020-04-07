@@ -8,11 +8,14 @@
  * 
  */
 
-char *get_env(char *name, char **env)
+extern char **environ;
+char *get_env(char *name)
 {
 	int i=0;
 	char *token, *ret;
+	char **env;
 
+	env = environ;
 	while (env[i])
 	{
 		token = strtok(env[i], "=");
@@ -23,5 +26,6 @@ char *get_env(char *name, char **env)
 		}
 		i++;
 	}
+	free (token);
 	return (NULL);
 }
