@@ -22,11 +22,12 @@ char *findpathof(char *filename)
 			conc = _strcat(tok, "/");
 			conc = _strcat(conc, filename);
 			if (stat(conc, &st) == 0)
-				return (conc);
+				break;
 		}
+		return(conc);
 	}
 	free(_path);
 	free(tok);
-	free(tokens);
+	free_arr(tokens);
 	return (conc);
 }

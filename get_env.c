@@ -26,6 +26,6 @@ char *get_env(char *name)
 		}
 		i++;
 	}
-	free (token);
+	free_arr(env);
 	return (NULL);
 }

@@ -40,6 +40,9 @@ int built_ins(char **args);
 
 char *findpathof(char *filename);
 char *get_env(char *name);
+void signal_handler(int sig);
 
+
+void free_arr(char **ar);
 
 #endif

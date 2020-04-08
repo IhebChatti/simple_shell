@@ -30,6 +30,6 @@ int built_ins(char **args)
 int _abort(char **args)
 {
 	printf("Bye have a great day\n");
-	free(args);
+	free_arr(args);
 	exit(0);
 }
