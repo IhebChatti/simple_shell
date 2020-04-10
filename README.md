@@ -7,7 +7,53 @@
 			                  |_|                                  
 
 ```
-Files
+<strong>Project description</strong>
+
+<hr>
+
+this project is a simple shell program created by Iheb Chatti and foued Dadi, it can be executed from the command line. This simple shell contains a number of basic functions from various shell programs
+
+
+<strong> Commands </strong>
+
+<hr>
+
+
+<table style="width: 507px;">
+<tbody>
+<tr style="height: 77px;">
+<td style="width: 188px; height: 77px;">&nbsp; &nbsp; &nbsp;<strong>&nbsp;Commads</strong></td>
+<td style="width: 494px; height: 77px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<strong>Description</strong></td>
+</tr>
+<tr style="height: 48px;background-color:#C0C0C0">
+<td style="width: 188px; height: 48px;">&nbsp;ls</td>
+<td style="width: 494px; height: 48px;">&nbsp;list directory contents</td>
+</tr>
+<tr style="height: 48px;">
+<td style="width: 188px; height: 48px;">&nbsp;pwd</td>
+<td style="width: 494px; height: 48px;">&nbsp;print the path of the current working directory</td>
+</tr>
+<tr style="height: 48px;background-color:#C0C0C0">
+<td style="width: 137px; height: 48px;">&nbsp;printenv</td>
+<td style="width: 369px; height: 48px;">&nbsp;prints out the name and values of the variables in the environement</td>
+</tr>
+<tr style="height: 48px;">
+<td style="width: 137px; height: 48px;">&nbsp;help</td>
+<td style="width: 369px; height: 48px;">&nbsp;displays information about shell built-in commands</td>
+</tr>
+<tr style="height: 48px;background-color:#C0C0C0">
+<td style="width: 137px; height: 48px;">&nbsp;cd</td>
+<td style="width: 369px; height: 48px;">&nbsp;change the current working directory</td>
+</tr>
+<tr style="height: 48px;">
+<td style="width: 137px; height: 48px;">&nbsp;exit</td>
+<td style="width: 369px; height: 48px;">&nbsp;exit the shell program</td>
+</tr>
+</tbody>
+</table>
+
+
+<strong> Files </strong>
 
 <hr>
 
@@ -66,8 +112,7 @@ Files
 </table>
 
 
-
-Learning Objectives
+<strong> Learning Objectives </strong>
 
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 General
@@ -86,3 +131,11 @@ General
     How to execute another program with the execve system call
     How to suspend the execution of a process until one of its children terminates
     What is EOF / “end-of-file”?
+
+
+<strong>AUTHORS</strong>
+
+<hr>
+
+Iheb Chatti
+Foued Dadi
