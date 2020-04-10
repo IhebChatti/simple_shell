@@ -7,6 +7,14 @@
 			                  |_|                                  
 
 ```
+
+<table>
+    <tr>
+        <td>Foo</td>
+    </tr>
+</table>
+
+
 Resources
 
 Read or watch:
