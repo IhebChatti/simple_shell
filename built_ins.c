@@ -29,7 +29,7 @@ int built_ins(char **args)
 
 int _abort(char **args)
 {
-	printf("Bye have a great day\n");
-	free_arr(args);
+	free(args);
+	free(*args);
 	exit(0);
 }

@@ -1,6 +1,10 @@
 #ifndef SIMPLE_SHELL
 #define SIMPLE_SHELL
 
+/* eviron global variable*/
+
+extern char **environ;
+
 /* Header Files */
 
 #include <stdio.h>

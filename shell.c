@@ -8,7 +8,6 @@
  *
  *
  */
-extern char **environ;
 int main(void)
 {
 	pid_t pid;
@@ -28,9 +27,8 @@ int main(void)
 		in_line = getline(&line, &size, stdin);
 		if (in_line == -1)
 		{
-			free(line);
 			write(STDIN_FILENO, "\n", 1);
-			exit(0);
+			break;
 		}
 		args = tokenizer(line);
 		if (built_ins(args))
@@ -46,11 +44,10 @@ int main(void)
 			}
 		}
 		else
-		{
 			wait(&status);
-		}
 		free(args);
 	}
 	free(line);
+	free(cmd);
 	return (0);
 }

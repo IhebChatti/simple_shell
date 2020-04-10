@@ -12,7 +12,7 @@ char *findpathof(char *filename)
 
 	_path = get_env("PATH");
 	tokens = tokenizer(_path);
-	if (stat(filename, &st) == 0)
+	if (stat(filename, &st) == 0 && st.st_uid == 0)
 		return (filename);
 	else
 	{
