@@ -12,8 +12,8 @@
 <hr>
 
 this project is a simple shell program created by Iheb Chatti and foued Dadi, it can be executed from the command line. This simple shell contains a number of basic functions from various shell programs
-
-
+<br>
+<br>
 <strong> Commands </strong>
 
 <hr>
@@ -51,8 +51,8 @@ this project is a simple shell program created by Iheb Chatti and foued Dadi, it
 </tr>
 </tbody>
 </table>
-
-
+<br>
+<br>
 <strong> Files </strong>
 
 <hr>
@@ -110,8 +110,8 @@ this project is a simple shell program created by Iheb Chatti and foued Dadi, it
 </tr>
 </tbody>
 </table>
-
-
+<br>
+<br>
 <strong> Learning Objectives </strong>
 
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
@@ -131,11 +131,11 @@ General
     How to execute another program with the execve system call
     How to suspend the execution of a process until one of its children terminates
     What is EOF / “end-of-file”?
-
-
+<br>
+<br>
 <strong>AUTHORS</strong>
 
 <hr>
 
-Iheb Chatti
+Iheb Chatti<br/>
 Foued Dadi
