@@ -26,19 +26,19 @@ this project is a simple shell program created by Iheb Chatti and foued Dadi, it
 
 1- clone the reporsitory to your local directory
 
-<p style="background-color:#C0C0C0">$ git clone https://github.com/IhebChatti/simple_shell.git</p>
+$ git clone https://github.com/IhebChatti/simple_shell.git
 
 2- compile all c files
 
-<p style="background-color:#C0C0C0">$ gcc -g *.c -o hsh</p>
+$ gcc -g *.c
+
 
 3- execute the simple_shell
 
-<p style="background-color:#C0C0C0">$ ./hsh</p>
+ $ ./hsh
 <br>
 <br>
 <br>
-
 <strong> Commands </strong>
 
 <hr>
