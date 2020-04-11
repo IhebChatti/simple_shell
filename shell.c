@@ -8,46 +8,46 @@
  *
  *
  */
+
 int main(void)
 {
-	pid_t pid;
-	char *cmd = NULL;
-	char *line = NULL;
-	char **args = NULL;
-	int status = 1;
+	char *cmd = NULL, *line = NULL, **args = NULL;
 	size_t size = 0;
-	int in_line = 0;
-	char **envp = environ;
+	pid_t pid;
+	int in_line = 0, status;
 
+	signal(SIGINT, signal_handler);
 	while (1)
 	{
-		signal(SIGINT, signal_handler);
 		if (isatty(STDIN_FILENO))
-			write(STDOUT_FILENO, "$", 2);
+			write(STDOUT_FILENO, "$ ", 2);
 		in_line = getline(&line, &size, stdin);
-		if (in_line == -1)
+		if (in_line < 0)
 		{
 			write(STDIN_FILENO, "\n", 1);
 			break;
 		}
 		args = tokenizer(line);
+		if (args == NULL || *args == NULL)
+			continue;
 		if (built_ins(args))
 			continue;
-		pid = fork();
+		cmd = findpathof(args[0]);
+			pid = fork();
 		if (pid == 0)
 		{
-			cmd = findpathof(args[0]);
-			if (execve(cmd, args, envp) == -1)
+			signal(SIGINT, SIG_DFL);
+			if (execve(cmd, args, environ) < 0)
 			{
-				perror("Wrong usage");
-				break;
+				perror(args[0]);
+				exit(0);
 			}
 		}
 		else
 			wait(&status);
 		free(args);
 	}
+	free_arr(args);
 	free(line);
-	free(cmd);
 	return (0);
 }
