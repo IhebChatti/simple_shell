@@ -3,7 +3,7 @@
 /**
  * get_env - function to get enviroment variable by name
  * @name: name of the variable
- * 
+ *
  * Return: environment on success
  * NULL on failure
  */
@@ -23,7 +23,7 @@ char *get_env(char *name)
 			break;
 		}
 		if ((*ch_p == '=') && (*name_p == '\0'))
-			return (ch_p+1);
+			return (ch_p + 1);
 		env_p++;
 	}
 	return (NULL);

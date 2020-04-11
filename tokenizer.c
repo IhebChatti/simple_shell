@@ -1,11 +1,10 @@
 #include "shell.h"
 
 /**
+ *tokenizer - function to tokenize a string
+ *@str: string to be tokenized
  *
- *
- *
- *
- *
+ *Return: array of tokens
  */
 
 char **tokenizer(char *str)

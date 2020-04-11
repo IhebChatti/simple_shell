@@ -17,10 +17,10 @@ return (i);
 }
 
 /**
- *_strncpy - a function that copies a string
+ *_strcpy - a function that copies a string
  *@dest: destination
  *@src: source
- *@n: int
+ *
  *Return: string
 */
 
@@ -61,7 +61,6 @@ char *_strdup(char *str)
 		*temp++ = *str++;
 	*temp = '\0';
 	return (ing);
-	
 }
 
 /**
@@ -95,21 +94,21 @@ int _strcmp(char *s1, char *s2)
 
 char *_strcat(char *str1, char *str2)
 {
-    int str1_len, str2_len, i = 0, j = 0;
-    char *conc;
+	int str1_len, str2_len, i = 0, j = 0;
+	char *conc;
 
-    str1_len = _strlen(str1);
-    str2_len = _strlen(str2);
-    conc = malloc(str1_len + str2_len + 2);
-    if (!conc)
-        return (NULL);
-    *conc = '\0';
-    while (str1[j])
-        conc[i++] = str1[j++];
-    conc[i++] = '/';
-    j = 0;
-    while (str2[j])
-        conc[i++] = str2[j++];
-    conc[i] = '\0';
-    return (conc);
+	str1_len = _strlen(str1);
+	str2_len = _strlen(str2);
+	conc = malloc(str1_len + str2_len + 2);
+	if (!conc)
+		return (NULL);
+	*conc = '\0';
+	while (str1[j])
+		conc[i++] = str1[j++];
+	conc[i++] = '/';
+	j = 0;
+	while (str2[j])
+		conc[i++] = str2[j++];
+	conc[i] = '\0';
+	return (conc);
 }

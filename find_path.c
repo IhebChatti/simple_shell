@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * 
- * 
- * 
- * 
+ *findpathof - function to find the path env
+ *@filename: name of the enviornment variable "PATH"
+ *
+ *Return: fullpath
  */
 
 char *findpathof(char *filename)
@@ -20,7 +20,7 @@ char *findpathof(char *filename)
 	tokens = tokenizer(_path);
 	if (_strchr(filename, '/') != 0)
 		return (filename);
-	else
+	if (_strchr(filename, '/') == 0)
 	{
 		for (i = 0; tokens[i] != '\0'; i++)
 		{

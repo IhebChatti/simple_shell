@@ -1,12 +1,10 @@
 #include "shell.h"
 
 /**
+ *main - Entry point
  *
- *
- *
- *
- *
- *
+ *Return: 0 on success
+ *error at failure
  */
 
 int main(void)
@@ -40,7 +38,7 @@ int main(void)
 			if (execve(cmd, args, environ) < 0)
 			{
 				perror(args[0]);
-				exit(0);
+				exit(EXIT_FAILURE);
 			}
 		}
 		else

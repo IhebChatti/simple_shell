@@ -17,16 +17,11 @@ extern char **environ;
 #include <string.h>
 #include <signal.h>
 #include <linux/limits.h>
+#include <errno.h>
+
+/* environ global variable */
 
 extern char **environ;
-
-/* Buildin struct */
-
-typedef struct built_ins
-{
-	char *name;
-	int (*fun)(char *);
-}b_ins;
 
 /* string handling functions */
 
@@ -41,7 +36,7 @@ char **tokenizer(char *str);
 /* builtin functions */
 
 int built_ins(char **args);
-int _abort(char **args);
+void _abort(char **args);
 int cd(char *path);
 int help(void);
 

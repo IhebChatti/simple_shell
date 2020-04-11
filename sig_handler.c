@@ -1,12 +1,11 @@
 #include "shell.h"
 
 /**
- * 
- * 
- * 
- * 
+ *signal_handler - signal handler function for ctr+C
+ *@sig: int
+ *
+ *Return: Void
  */
-
 
 void signal_handler(int sig)
 {

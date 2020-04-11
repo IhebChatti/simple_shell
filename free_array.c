@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * 
- * 
- * 
- * 
+ *free_arr - function to free an array
+ *@ar: array of strings
+ *
+ *Return: Void
  */
 
 void free_arr(char **ar)
