@@ -50,6 +50,14 @@ this project is a simple shell program created by Iheb Chatti and foued Dadi, it
 <td style="width: 369px; height: 48px;">&nbsp;change the current working directory</td>
 </tr>
 <tr style="height: 48px;">
+<td style="width: 137px; height: 48px;">&nbsp;echo</td>
+<td style="width: 369px; height: 48px;">&nbsp;Write arguments to the standard output</td>
+</tr>
+<tr style="height: 48px;">
+<td style="width: 137px; height: 48px;">&nbsp;rm</td>
+<td style="width: 369px; height: 48px;">&nbsp;remove files or directories</td>
+</tr>
+<tr style="height: 48px;">
 <td style="width: 137px; height: 48px;">&nbsp;exit</td>
 <td style="width: 369px; height: 48px;">&nbsp;exit the shell program</td>
 </tr>
