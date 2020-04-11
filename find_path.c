@@ -1,33 +1,36 @@
 #include "shell.h"
 
-
+/**
+ * 
+ * 
+ * 
+ * 
+ */
 
 char *findpathof(char *filename)
 {
 	int i;
-	char *_path;
+	char *_path, *pathdup;
 	char **tokens;
 	char *conc, *tok;
 	struct stat st;
 
-	_path = get_env("PATH");
+	pathdup = get_env("PATH");
+	_path = _strdup(pathdup);
 	tokens = tokenizer(_path);
-	if (stat(filename, &st) == 0 && st.st_uid == 0)
+	if (_strchr(filename, '/') != 0)
 		return (filename);
 	else
 	{
 		for (i = 0; tokens[i] != '\0'; i++)
 		{
 			tok = _strdup(tokens[i]);
-			conc = _strcat(tok, "/");
-			conc = _strcat(conc, filename);
+			conc = _strcat(tok, filename);
 			if (stat(conc, &st) == 0)
 				break;
 		}
-		return(conc);
 	}
 	free(_path);
 	free(tok);
-	free_arr(tokens);
 	return (conc);
 }
