@@ -126,6 +126,8 @@ this project is a simple shell program created by Iheb Chatti and foued Dadi, it
 <br>
 <strong> Learning Objectives </strong>
 
+<hr>
+
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 General
 
