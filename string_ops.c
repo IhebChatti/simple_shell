@@ -23,6 +23,7 @@ return (i);
  *@n: int
  *Return: string
 */
+
 char *_strcpy(char *dest, char *src)
 {
 	char *res = dest;
@@ -37,10 +38,11 @@ char *_strcpy(char *dest, char *src)
 }
 
 /**
-*_strdup - function that returns a pointer to newly allocated space in mem
-*@str: pointer type char
-*Return: pointer type char
-*/
+ *_strdup - function that returns a pointer to newly allocated space in mem
+ *@str: pointer type char
+ *Return: pointer type char
+ */
+
 char *_strdup(char *str)
 {
 	int i = 0;
@@ -63,11 +65,12 @@ char *_strdup(char *str)
 }
 
 /**
-*_strcmp - a function to compare 2 strings
-*@s1: pointer type char
-*@s2: pointer type char
-*Return: int
-*/
+ *_strcmp - a function to compare 2 strings
+ *@s1: pointer type char
+ *@s2: pointer type char
+ *Return: int
+ */
+
 int _strcmp(char *s1, char *s2)
 {
 	while (*s1 != '\0' && *s2 != '\0' && *s1 == *s2)
@@ -84,22 +87,29 @@ int _strcmp(char *s1, char *s2)
 }
 
 /**
-*_strcat - a function that concatinates two strings
-*@dest: pointer type char for destination
-*@src: pointer typ char for source
-*Return: char
-*/
-char *_strcat(char *dest, char *src)
-{
-int i = 0, length = 0;
+ *_strcat - a function that concatinates two strings
+ *@str1: first string to concatinate
+ *@str2: second string to concatinate
+ *Return: char
+ */
 
-	while (dest[length] != '\0')
-		length++;
-	while (src[i] != '\0')
-	{
-		dest[length] = src[i];
-		i++;
-		length++;
-	}
-	return (dest);
+char *_strcat(char *str1, char *str2)
+{
+    int str1_len, str2_len, i = 0, j = 0;
+    char *conc;
+
+    str1_len = _strlen(str1);
+    str2_len = _strlen(str2);
+    conc = malloc(str1_len + str2_len + 2);
+    if (!conc)
+        return (NULL);
+    *conc = '\0';
+    while (str1[j])
+        conc[i++] = str1[j++];
+    conc[i++] = '/';
+    j = 0;
+    while (str2[j])
+        conc[i++] = str2[j++];
+    conc[i] = '\0';
+    return (conc);
 }
