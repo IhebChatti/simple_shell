@@ -18,12 +18,14 @@ extern char **environ;
 #include <signal.h>
 #include <linux/limits.h>
 
+extern char **environ;
+
 /* Buildin struct */
 
 typedef struct built_ins
 {
 	char *name;
-	int (*fun)(char **);
+	int (*fun)(char *);
 }b_ins;
 
 /* string handling functions */
@@ -33,19 +35,26 @@ char *_strcpy(char *dest, char *src);
 int _strcmp(char *s1, char *s2);
 char *_strcat(char *dest, char *src);
 char *_strdup(char *str);
+char *_strchr(char *s, char c);
 char **tokenizer(char *str);
 
 /* builtin functions */
 
-int _abort(char **args);
 int built_ins(char **args);
+int _abort(char **args);
+int cd(char *path);
+int help(void);
 
 /* path & env handling */
 
 char *findpathof(char *filename);
 char *get_env(char *name);
+
+/* signal handler */
+
 void signal_handler(int sig);
 
+/* free array func */
 
 void free_arr(char **ar);
 
