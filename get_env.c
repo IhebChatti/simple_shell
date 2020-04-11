@@ -1,31 +1,30 @@
 #include "shell.h"
 
 /**
+ * get_env - function to get enviroment variable by name
+ * @name: name of the variable
  * 
- * 
- * 
- * 
- * 
+ * Return: environment on success
+ * NULL on failure
  */
 
-extern char **environ;
 char *get_env(char *name)
 {
-	int i=0;
-	char *token, *ret;
-	char **env;
+	char **env_p;
+	char *ch_p;
+	char *name_p;
 
-	env = environ;
-	while (env[i])
+	env_p = environ;
+	while (*env_p != NULL)
 	{
-		token = strtok(env[i], "=");
-		if (_strcmp(token, name) == 0)
-		{
-			ret = strtok(NULL, "=");
-			return (ret);
+	for (ch_p = *env_p, name_p = name; *ch_p == *name_p; ch_p++, name_p++)
+	{
+		if (*ch_p == '=')
+			break;
 		}
-		i++;
+		if ((*ch_p == '=') && (*name_p == '\0'))
+			return (ch_p+1);
+		env_p++;
 	}
-	free(token);
 	return (NULL);
 }
