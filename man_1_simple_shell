@@ -6,7 +6,8 @@
 does not support arguments, just simple commands.
 
 .SH DESCRIPTION
-simple_shell is a simple UNIX program that interprets commands entered by the user. this simple_shell does not support arguments
+simple_shell is a simple UNIX program that interprets commands entered by the user.
+this simple_shell does not support arguments
 
 .SH OVERVIEW
 .user will put a command.
@@ -16,8 +17,8 @@ simple_shell is a simple UNIX program that interprets commands entered by the us
 .if the $PATH is found the simple_shell will run that command.
 
 .SH RETURN VALUE
-the simple_shell will return the value demanded from the program if the program managed to execute without problems 
-or will return and error depending on the type of error.
+the simple_shell will return the value demanded from the program if the program managed to execute
+without problems, or the simple_shell will return an error depending on the type of error.
 
 .SH COMPILATION
 files can be compiled using "gcc -g *.c -o hsh"
