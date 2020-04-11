@@ -1,25 +1,25 @@
 .TH SIMPLE_SHELL "APR 11 2020" "simple_shell man page"
-.SH <strong>NAME</strong>
+.SH NAME
 .B simple_shell
 
-.SH <strong>SYNOPSIS</strong>
+.SH SYNOPSIS
 does not support arguments, just simple commands.
 
-.SH <strong>DESCRIPTION</strong>
+.SH DESCRIPTION
 simple_shell is a simple UNIX program that interprets commands entered by the user. this simple_shell does not support arguments
 
-.SH <strong>OVERVIEW</strong>
+.SH OVERVIEW
 .user will put a command.
 .user input will be tokenized (divided into small tokens), these tokens are seperated by delimeters.
 .the first token which is token[0] will be considered as the command.
 .the simple_shell will search for the PATH of this command (token[0]).
 .if the $PATH is found the simple_shell will run that command.
 
-.SH <strong>RETURN VALUE</strong>
+.SH RETURN VALUE
 the simple_shell will return the value demanded from the program if the program managed to execute without problems 
 or will return and error depending on the type of error.
 
-.SH <strong>COMPILATION</strong>
+.SH COMPILATION
 files can be compiled using "gcc -g *.c -o hsh"
 
 .B LIST OF FILES TO BE compiled
@@ -33,7 +33,7 @@ files can be compiled using "gcc -g *.c -o hsh"
 .string_ops2.c
 .tokenizer.c
 
-.SH <strong>SYNTAX</strong>
+.SH SYNTAX
 $ <command>
 or 
 $ <commands> <filename>
@@ -46,7 +46,7 @@ $ cd /home/simple_shell
 EXAMPLE 3:
 $ echo "hello holberton"
 
-.SH <strong>COMMANDS EXAMPLES</strong>
+.SH COMMANDS EXAMPLES
 .SS ls : list all files in the current directory
 
 .SS cd : change the current working directory
@@ -59,13 +59,13 @@ $ echo "hello holberton"
 
 .SS help : displays information about shell built-in commands
 
-.SH <strong>HANDLING SHORTCUTS</strong>
+.SH HANDLING SHORTCUTS
 .B Ctrl+D : terminates the simple_shell
 
 .B Ctrl+C : prints ^Ĉ and gets the user back to a new line
 
-.SH <strong>BUGS</strong>
+.SH BUGS
 giving ls command an empty path is not handled.
 
-.SH <strong>AUTHORS</strong>
+.SH AUTHORS
 IHEB CHATTI, FOUED DADI
