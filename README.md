@@ -30,8 +30,7 @@ $ git clone https://github.com/IhebChatti/simple_shell.git
 
 2- compile all c files
 
-$ gcc -g *.c
-
+$ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 
 3- execute the simple_shell
 
