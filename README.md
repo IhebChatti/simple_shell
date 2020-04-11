@@ -18,6 +18,23 @@
 this project is a simple shell program created by Iheb Chatti and foued Dadi, it can be executed from the command line. This simple shell contains a number of basic functions from various shell programs
 <br>
 <br>
+<strong>START</strong>
+
+<hr>
+
+1- clone the reporsitory to your local directory
+
+$ git clone https://github.com/IhebChatti/simple_shell.git
+
+2- compile all c files
+
+$ gcc -g *.c -o hsh
+
+3- execute the simple_shell
+
+$ ./hsh
+<br>
+<br>
 <strong> Commands </strong>
 
 <hr>
@@ -122,7 +139,7 @@ this project is a simple shell program created by Iheb Chatti and foued Dadi, it
 </tr>
 <tr style="height: 48px;">
 <td style="width: 188px; height: 48px;">&nbsp;man_1_simple_shell</td>
-<td style="width: 494px; height: 48px;">&nbsp;manual page for the simple_shell program</td>
+<td style="width: 494px; height: 48px;">&nbsp;Manual page for the simple_shell program</td>
 </tr>
 </tbody>
 </table>
