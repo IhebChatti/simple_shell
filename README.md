@@ -120,6 +120,10 @@ this project is a simple shell program created by Iheb Chatti and foued Dadi, it
 <td style="width: 188px; height: 48px;">&nbsp;AUTHORS</td>
 <td style="width: 494px; height: 48px;">&nbsp;File indicating the authors of this program&nbsp;</td>
 </tr>
+<tr style="height: 48px;">
+<td style="width: 188px; height: 48px;">&nbsp;man_1_simple_shell</td>
+<td style="width: 494px; height: 48px;">&nbsp;manual page for the simple_shell program</td>
+</tr>
 </tbody>
 </table>
 <br>
