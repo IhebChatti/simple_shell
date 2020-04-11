@@ -18,6 +18,8 @@
 this project is a simple shell program created by Iheb Chatti and foued Dadi, it can be executed from the command line. This simple shell contains a number of basic functions from various shell programs
 <br>
 <br>
+<br>
+
 <strong>START</strong>
 
 <hr>
@@ -35,6 +37,8 @@ $ gcc -g *.c -o hsh
 $ ./hsh
 <br>
 <br>
+<br>
+
 <strong> Commands </strong>
 
 <hr>
