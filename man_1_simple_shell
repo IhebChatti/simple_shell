@@ -1,0 +1,71 @@
+.TH SIMPLE_SHELL "APR 11 2020" "simple_shell man page"
+.SH <strong>NAME</strong>
+.B simple_shell
+
+.SH <strong>SYNOPSIS</strong>
+does not support arguments, just simple commands.
+
+.SH <strong>DESCRIPTION</strong>
+simple_shell is a simple UNIX program that interprets commands entered by the user. this simple_shell does not support arguments
+
+.SH <strong>OVERVIEW</strong>
+.user will put a command.
+.user input will be tokenized (divided into small tokens), these tokens are seperated by delimeters.
+.the first token which is token[0] will be considered as the command.
+.the simple_shell will search for the PATH of this command (token[0]).
+.if the $PATH is found the simple_shell will run that command.
+
+.SH <strong>RETURN VALUE</strong>
+the simple_shell will return the value demanded from the program if the program managed to execute without problems 
+or will return and error depending on the type of error.
+
+.SH <strong>COMPILATION</strong>
+files can be compiled using "gcc -g *.c -o hsh"
+
+.B LIST OF FILES TO BE compiled
+.built_ins.c
+.find_path.c
+.free_array.c
+.get_env.c
+.shell.c
+.sig_handler.c
+.string_ops.c
+.string_ops2.c
+.tokenizer.c
+
+.SH <strong>SYNTAX</strong>
+$ <command>
+or 
+$ <commands> <filename>
+or
+$ <command> "text"
+EXAMPLE 1:
+$ ls
+EXAMPLE 2:
+$ cd /home/simple_shell
+EXAMPLE 3:
+$ echo "hello holberton"
+
+.SH <strong>COMMANDS EXAMPLES</strong>
+.SS ls : list all files in the current directory
+
+.SS cd : change the current working directory
+
+.SS exit : exit the shell program
+
+.SS pwd : print the path of the current working directory
+
+.SS printenv: prints out the name and values of the variables in the environement
+
+.SS help : displays information about shell built-in commands
+
+.SH <strong>HANDLING SHORTCUTS</strong>
+.B Ctrl+D : terminates the simple_shell
+
+.B Ctrl+C : prints ^Ĉ and gets the user back to a new line
+
+.SH <strong>BUGS</strong>
+giving ls command an empty path is not handled.
+
+.SH <strong>AUTHORS</strong>
+IHEB CHATTI, FOUED DADI
