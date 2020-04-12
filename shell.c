@@ -12,10 +12,12 @@ int main(void)
 	char *cmd = NULL, *line = NULL, **args = NULL;
 	size_t size = 0;
 	int in_line = 0;
+	unsigned int index = 0;
 
 	signal(SIGINT, signal_handler);
 	while (1)
 	{
+		index++;
 		if (isatty(STDIN_FILENO))
 			write(STDOUT_FILENO, "$ ", 2);
 		in_line = getline(&line, &size, stdin);
@@ -34,7 +36,15 @@ int main(void)
 			continue;
 		}
 		cmd = findpathof(args[0]);
-		exec(cmd, args);
+		if (exec(cmd, args) < 0)
+		{
+			write(STDERR_FILENO, "./hsh: ", 7);
+			write(STDERR_FILENO, itoa(index), _strlen(itoa(index)));
+			write(STDERR_FILENO, ": ", 2);
+			write(STDERR_FILENO, args[0], _strlen(args[0]));
+			write(STDERR_FILENO, ": not found\n", 13);
+			exit(EXIT_FAILURE);
+		}
 		free(args);
 		free(cmd);
 	}

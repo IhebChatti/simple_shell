@@ -8,7 +8,7 @@
  *Return: void
  */
 
-void exec(char *cmd, char **args)
+int exec(char *cmd, char **args)
 {
 	pid_t pid;
 	int status;
@@ -19,10 +19,11 @@ void exec(char *cmd, char **args)
 		signal(SIGINT, SIG_DFL);
 		if (execve(cmd, args, environ) < 0)
 		{
-			perror(args[0]);
+			return (-1);
 			exit(EXIT_FAILURE);
 		}
 	}
 	else
 		wait(&status);
+	return (0);
 }
