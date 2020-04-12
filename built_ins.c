@@ -15,8 +15,9 @@ int built_ins(char **args)
 	cmds_list[0] = "exit";
 	cmds_list[1] = "cd";
 	cmds_list[2] = "help";
+	cmds_list[3] = "env";
 
-	for (i = 0; i < 3; i++)
+	for (i = 0; i < 4; i++)
 	{
 		if (_strcmp(args[0], cmds_list[i]) == 0)
 		{
@@ -34,6 +35,9 @@ int built_ins(char **args)
 		case 3:
 			help();
 			return (1);
+			case 4:
+				env();
+				return (1);
 		default:
 			break;
 	}
@@ -80,4 +84,15 @@ int help(void)
 	write(STDOUT_FILENO, "exit: exit shell\n", 18);
 	write(STDOUT_FILENO, "help: displays help\n", 21);
 	return (0);
+}
+
+void env(void)
+{
+	int i;
+
+	for (i = 0; environ[i]; i++)
+	{
+		write(STDOUT_FILENO, (const void *) environ[i], _strlen(environ[i]));
+		write(STDOUT_FILENO, "\n", 2);
+	}
 }
