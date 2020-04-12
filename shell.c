@@ -11,8 +11,7 @@ int main(void)
 {
 	char *cmd = NULL, *line = NULL, **args = NULL;
 	size_t size = 0;
-	pid_t pid;
-	int in_line = 0, status;
+	int in_line = 0;
 
 	signal(SIGINT, signal_handler);
 	while (1)
@@ -23,29 +22,21 @@ int main(void)
 		if (in_line < 0)
 		{
 			write(STDIN_FILENO, "\n", 1);
+			free(line);
 			break;
 		}
 		args = tokenizer(line);
 		if (args == NULL || *args == NULL)
 			continue;
 		if (built_ins(args))
-			continue;
-		cmd = findpathof(args[0]);
-			pid = fork();
-		if (pid == 0)
 		{
-			signal(SIGINT, SIG_DFL);
-			if (execve(cmd, args, environ) < 0)
-			{
-				perror(args[0]);
-				exit(EXIT_FAILURE);
-			}
+			free(args);
+			continue;
 		}
-		else
-			wait(&status);
+		cmd = findpathof(args[0]);
+		exec(cmd, args);
 		free(args);
+		free(cmd);
 	}
-	free_arr(args);
-	free(line);
 	return (0);
 }

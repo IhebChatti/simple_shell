@@ -9,28 +9,31 @@
 
 char *findpathof(char *filename)
 {
-	int i;
+	int i = 0;
 	char *_path, *pathdup;
 	char **tokens;
-	char *conc, *tok;
+	char *conc;
 	struct stat st;
 
+	if (_strchr(filename, '/') != 0)
+		return (filename);
 	pathdup = get_env("PATH");
 	_path = _strdup(pathdup);
 	tokens = tokenizer(_path);
-	if (_strchr(filename, '/') != 0)
-		return (filename);
-	if (_strchr(filename, '/') == 0)
+	while (tokens[i])
 	{
-		for (i = 0; tokens[i] != '\0'; i++)
-		{
-			tok = _strdup(tokens[i]);
-			conc = _strcat(tok, filename);
-			if (stat(conc, &st) == 0)
-				break;
-		}
+		conc = _strcat(tokens[i], filename);
+		if (stat(conc, &st) == 0)
+			break;
+		i++;
+		if (!tokens[i])
+			break;
+		free(conc);
 	}
+	free(tokens);
+	tokens = NULL;
 	free(_path);
-	free(tok);
+	_path = NULL;
+	pathdup = NULL;
 	return (conc);
 }

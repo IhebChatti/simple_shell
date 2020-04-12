@@ -45,6 +45,9 @@ int help(void);
 char *findpathof(char *filename);
 char *get_env(char *name);
 
+/* execute function */
+void exec(char *cmd, char **args);
+
 /* signal handler */
 
 void signal_handler(int sig);

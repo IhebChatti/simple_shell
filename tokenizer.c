@@ -33,6 +33,5 @@ char **tokenizer(char *str)
 		return (NULL);
 	}
 	tokens[i] = NULL;
-	free(token);
 	return (tokens);
 }
