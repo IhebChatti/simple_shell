@@ -39,6 +39,7 @@ int built_ins(char **args);
 void _abort(char **args);
 int cd(char *path);
 int help(void);
+void env(void);
 
 /* path & env handling */
 
