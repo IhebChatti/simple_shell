@@ -32,6 +32,9 @@ char *_strcat(char *dest, char *src);
 char *_strdup(char *str);
 char *_strchr(char *s, char c);
 char **tokenizer(char *str);
+char *itoa(unsigned int n);
+int intlen(int num);
+void rev_arr(char *arr, int len);
 
 /* builtin functions */
 
@@ -47,7 +50,7 @@ char *findpathof(char *filename);
 char *get_env(char *name);
 
 /* execute function */
-void exec(char *cmd, char **args);
+int exec(char *cmd, char **args);
 
 /* signal handler */
 
