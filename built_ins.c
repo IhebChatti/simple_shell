@@ -86,6 +86,12 @@ int help(void)
 	return (0);
 }
 
+/**
+ *env - function to print env
+ *
+ *Return: void
+ */
+
 void env(void)
 {
 	int i;

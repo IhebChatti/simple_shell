@@ -62,6 +62,15 @@ int intlen(int num)
 	}
 	return (len);
 }
+
+/**
+ *rev_arr - function that reverse array
+ *@arr: array to be reversed;
+ *@len: lenght
+ *
+ *Return: Void
+ */
+
 void rev_arr(char *arr, int len)
 {
 	int i;
