@@ -61,6 +61,7 @@ void _abort(char **args)
 /**
  *cd - change working directory
  *@path: path
+ *@args: arguments
  *
  *Return: new working directory
  */
