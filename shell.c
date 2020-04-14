@@ -46,7 +46,7 @@ int main(void)
 			exit(EXIT_FAILURE);
 		}
 		free(args);	
+		free(cmd);
 	}
-	free(cmd);
 	return (0);
 }
