@@ -18,4 +18,5 @@ void free_arr(char **ar)
 		free(ar[i]);
 		i++;
 	}
+	free(ar);
 }
