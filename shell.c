@@ -43,10 +43,14 @@ int main(void)
 			write(STDERR_FILENO, ": ", 2);
 			write(STDERR_FILENO, args[0], _strlen(args[0]));
 			write(STDERR_FILENO, ": not found\n", 13);
+			free(args);
+			free(cmd);
 			exit(EXIT_FAILURE);
 		}
-		free(args);	
-		free(cmd);
+		free(args);
+		args = NULL;
+		cmd = NULL;
 	}
+	free(cmd);
 	return (0);
 }

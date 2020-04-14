@@ -13,7 +13,7 @@ char **tokenizer(char *str)
 	int i = 0;
 	char *token;
 	char  **tokens;
-	char *del = " \t\r\n\a:";
+	char *del = " \t\r\n\a\v:";
 
 	tokens = malloc(sizeof(char *) * 64);
 	if (tokens == NULL)
