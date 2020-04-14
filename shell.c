@@ -45,8 +45,8 @@ int main(void)
 			write(STDERR_FILENO, ": not found\n", 13);
 			exit(EXIT_FAILURE);
 		}
-		free(args);
-		free(cmd);
+		free(args);	
 	}
+	free(cmd);
 	return (0);
 }
