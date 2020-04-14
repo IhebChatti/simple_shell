@@ -40,7 +40,7 @@ void rev_arr(char *arr, int len);
 
 int built_ins(char **args);
 void _abort(char **args);
-int cd(char *path);
+int cd(char *path, char **args);
 int help(void);
 void env(void);
 

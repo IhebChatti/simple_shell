@@ -30,7 +30,7 @@ int built_ins(char **args)
 		case 1:
 			_abort(args);
 		case 2:
-			cd(args[1]);
+			cd(args[1], args);
 			return (1);
 		case 3:
 			help();
@@ -64,9 +64,22 @@ void _abort(char **args)
  *
  *Return: new working directory
  */
-int cd(char *path)
+int cd(char *path, char **args)
 {
-	return (chdir(path));
+	char *home;
+	char *old;
+
+	old = get_env("OLDPWD");
+	home = get_env("HOME");
+	if (!args[1])
+	{
+		return (chdir(home));
+	}
+	if (_strcmp(args[1], "-") == 0)
+		return (chdir(old));
+	else
+		return (chdir(path));
+	return (0);
 }
 
 /**
