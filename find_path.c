@@ -18,8 +18,12 @@ char *findpathof(char *filename)
 	if (_strchr(filename, '/') != 0)
 		return (filename);
 	pathdup = get_env("PATH");
+	if (pathdup == NULL)
+		return (filename);
 	_path = _strdup(pathdup);
 	tokens = tokenizer(_path);
+	if (tokens == NULL)
+		return (filename);
 	while (tokens[i])
 	{
 		conc = _strcat(tokens[i], filename);
