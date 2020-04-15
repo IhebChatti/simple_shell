@@ -53,8 +53,11 @@ int built_ins(char **args)
 
 void _abort(char **args)
 {
+	free(*args);
+	*args = NULL;
 	free(args);
-	exit(1);
+	args = NULL;
+	exit(0);
 }
 
 /**
