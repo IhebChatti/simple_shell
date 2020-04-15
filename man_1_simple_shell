@@ -3,70 +3,89 @@
 .B simple_shell
 
 .SH SYNOPSIS
- man [command] [arguments]
- EXAMPLE:
- man ls -l
+man [command] [arguments]
+
+EXAMPLE:
+
+man ls -l
 
 .SH DESCRIPTION
- simple_shell is a simple UNIX program that interprets commands entered by the user.
+simple_shell is a simple UNIX program that interprets commands entered by the user.
 
 .SH OVERVIEW
-.user will put a command.
-.user input will be tokenized (divided into small tokens), these tokens are seperated by delimeters.
-.the first token which is token[0] will be considered as the command.
-.the simple_shell will search for the PATH of this command (token[0]).
-.if the $PATH is found the simple_shell will run that command.
+user will put a command.
+user input will be tokenized (divided into small tokens), these tokens are seperated by delimeters.
+the first token which is token[0] will be considered as the command.
+the simple_shell will search for the PATH of this command (token[0]).
+if the $PATH is found the simple_shell will run that command.
 
 .SH RETURN VALUE
- the simple_shell will return the value demanded from the program if the program managed to execute
- without problems, or the simple_shell will return an error depending on the type of error.
+the simple_shell will return the value demanded from the program if the program managed to execute
+without problems, or the simple_shell will return an error depending on the type of error.
 
 .SH COMPILATION
- files can be compiled using "gcc -g *.c -o hsh"
+files can be compiled using "gcc -g *.c -o hsh"
 
-.B LIST OF FILES TO BE compiled
-.built_ins.c
-.find_path.c
-.free_array.c
-.get_env.c
-.shell.c
-.sig_handler.c
-.string_ops.c
-.string_ops2.c
-.tokenizer.c
+.B LIST OF FILES TO BE compiled:
+
+built_ins.c
+
+find_path.c
+
+free_array.c
+
+get_env.c
+
+shell.c
+
+sig_handler.c
+
+string_ops.c
+
+string_ops2.c
+
+tokenizer.c
 
 .SH SYNTAX
 $ <command>
- or 
+
+or 
+
 $ <commands> <filename>
- or
+
+or
+
 $ <command> "text"
- EXAMPLE 1:
+
+EXAMPLE 1:
+
 $ ls
- EXAMPLE 2:
+
+EXAMPLE 2:
+
 $ cd /home/simple_shell
- EXAMPLE 3:
+
+EXAMPLE 3:
+
 $ echo "hello holberton"
 
 .SH COMMANDS EXAMPLES
+ls : list all files in the current directory
 
-.SS ls : list all files in the current directory
+cd : change the current working directory
 
-.SS cd : change the current working directory
+exit : exit the shell program
 
-.SS exit : exit the shell program
+pwd : print the path of the current working directory
 
-.SS pwd : print the path of the current working directory
+printenv: prints out the name and values of the variables in the environement
 
-.SS printenv: prints out the name and values of the variables in the environement
-
-.SS help : displays information about shell built-in commands
+help : displays information about shell built-in commands
 
 .SH HANDLING SHORTCUTS
+ Ctrl+D : terminates the simple_shell
 
-.B Ctrl+D : terminates the simple_shell
-
-.B Ctrl+C : prints ^Ĉ and gets the user back to a new line
+ Ctrl+C : prints ^Ĉ and gets the user back to a new line
 
 .SH BUGS
  giving ls command an empty path is not handled.
