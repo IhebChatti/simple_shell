@@ -54,7 +54,7 @@ int built_ins(char **args)
 void _abort(char **args)
 {
 	free(args);
-	exit(EXIT_SUCCESS);
+	exit(1);
 }
 
 /**
