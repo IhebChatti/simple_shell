@@ -38,8 +38,8 @@ void rev_arr(char *arr, int len);
 
 /* builtin functions */
 
-int built_ins(char **args);
-void _abort(char **args);
+int built_ins(char **args, char *line);
+void _abort(char **args, char *line);
 int cd(char *path, char **args);
 int help(void);
 void env(void);

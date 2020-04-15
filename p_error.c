@@ -10,10 +10,13 @@
 
 int p_error(int index, char **args)
 {
+	char *index_str = itoa(index);
+	char *ar = args[0];
 	write(STDERR_FILENO, "./hsh: ", 7);
-	write(STDERR_FILENO, itoa(index), _strlen(itoa(index)));
+	write(STDERR_FILENO, index_str, _strlen(index_str));
 	write(STDERR_FILENO, ": ", 2);
-	write(STDERR_FILENO, args[0], _strlen(args[0]));
+	write(STDERR_FILENO, ar, _strlen(ar));
 	write(STDERR_FILENO, ": not found\n", 13);
+	free(index_str);
 	return (0);
 }

@@ -33,13 +33,14 @@ int main(void)
 		args = tokenizer(line);
 		if (args == NULL || *args == NULL)
 			continue;
-		if (built_ins(args))
+		if (built_ins(args, line))
 			continue;
 		cmd = findpathof(args[0]);
 		if (exec(cmd, args) < 0)
 		{
-			free_arr(args);
 			p_error(index, args);
+			free(*args);
+			free(args);
 			exit(EXIT_FAILURE);
 		}
 		if (cmd != args[0])

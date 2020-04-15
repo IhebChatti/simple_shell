@@ -7,7 +7,7 @@
  *Return: 0 on success
  */
 
-int built_ins(char **args)
+int built_ins(char **args, char *line)
 {
 	int i, switch_args = 0;
 	char *cmds_list[3];
@@ -28,7 +28,7 @@ int built_ins(char **args)
 	switch (switch_args)
 	{
 		case 1:
-			_abort(args);
+			_abort(args, line);
 		case 2:
 			cd(args[1], args);
 			return (1);
@@ -51,10 +51,10 @@ int built_ins(char **args)
  *Return: void
  */
 
-void _abort(char **args)
+void _abort(char **args, char *line)
 {
-	free(*args);
-	*args = NULL;
+	free(line);
+	line = NULL;
 	free(args);
 	args = NULL;
 	exit(0);

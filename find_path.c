@@ -9,7 +9,7 @@
 
 char *findpathof(char *filename)
 {
-	int i = 0;
+	int i = 0, flag = 0;
 	char *_path, *pathdup;
 	char **tokens;
 	char *conc;
@@ -28,10 +28,11 @@ char *findpathof(char *filename)
 	{
 		conc = _strcat(tokens[i], filename);
 		if (stat(conc, &st) == 0)
+		{
+			flag += 1;
 			break;
+		}
 		i++;
-		if (!tokens[i])
-			break;
 		free(conc);
 	}
 	free(tokens);
@@ -39,5 +40,8 @@ char *findpathof(char *filename)
 	free(_path);
 	_path = NULL;
 	pathdup = NULL;
-	return (conc);
+	if (flag > 0)
+		return (conc);
+	else
+		return (filename);
 }
