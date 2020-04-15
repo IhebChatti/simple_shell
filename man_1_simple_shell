@@ -9,7 +9,6 @@
 
 .SH DESCRIPTION
  simple_shell is a simple UNIX program that interprets commands entered by the user.
- this simple_shell does not support arguments
 
 .SH OVERVIEW
 .user will put a command.
@@ -72,3 +71,41 @@ $ echo "hello holberton"
 
 .SH AUTHORS
  IHEB CHATTI, FOUED DADI
+
+
+ .TH SIMPLE_SHELL "APR 11 2020" "simple_shell man page"
+.SH NAME
+.B simple_shell
+
+.SH SYNOPSIS
+ man [command] [arguments]
+ EXAMPLE:
+ man ls -l
+
+.SH DESCRIPTION
+ simple_shell is a simple UNIX program that interprets commands entered by the user.
+
+.SH OVERVIEW
+.user will put a command.
+.user input will be tokenized (divided into small tokens), these tokens are seperated by delimeters.
+.the first token which is token[0] will be considered as the command.
+.the simple_shell will search for the PATH of this command (token[0]).
+.if the $PATH is found the simple_shell will run that command.
+
+.SH RETURN VALUE
+ the simple_shell will return the value demanded from the program if the program managed to execute
+ without problems, or the simple_shell will return an error depending on the type of error.
+
+.SH COMPILATION
+ files can be compiled using "gcc -g *.c -o hsh"
+
+.B LIST OF FILES TO BE compiled
+.built_ins.c
+.find_path.c
+.free_array.c
+.get_env.c
+.shell.c
+.sig_handler.c
+.string_ops.c
+.string_ops2.c
+.tokenizer.c
