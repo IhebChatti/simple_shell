@@ -3,6 +3,7 @@
 /**
  *built_ins - function for builtin commands
  *@args: arguments
+ *@line: command line
  *
  *Return: 0 on success
  */
@@ -47,6 +48,7 @@ int built_ins(char **args, char *line)
 /**
  *_abort - exit function
  *@args: arguments
+ *@line: command line
  *
  *Return: void
  */

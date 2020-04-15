@@ -12,6 +12,7 @@ int p_error(int index, char **args)
 {
 	char *index_str = itoa(index);
 	char *ar = args[0];
+
 	write(STDERR_FILENO, "./hsh: ", 7);
 	write(STDERR_FILENO, index_str, _strlen(index_str));
 	write(STDERR_FILENO, ": ", 2);
