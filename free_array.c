@@ -16,7 +16,9 @@ void free_arr(char **ar)
 	while (ar[i])
 	{
 		free(ar[i]);
+		ar[i] = NULL;
 		i++;
 	}
 	free(ar);
+	ar = NULL;
 }
