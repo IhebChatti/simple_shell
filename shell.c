@@ -38,13 +38,7 @@ int main(void)
 		cmd = findpathof(args[0]);
 		if (exec(cmd, args) < 0)
 		{
-			write(STDERR_FILENO, "./hsh: ", 7);
-			write(STDERR_FILENO, itoa(index), _strlen(itoa(index)));
-			write(STDERR_FILENO, ": ", 2);
-			write(STDERR_FILENO, args[0], _strlen(args[0]));
-			write(STDERR_FILENO, ": not found\n", 13);
-			free(args);
-			free(cmd);
+			p_error(index, args);
 			exit(EXIT_FAILURE);
 		}
 		free(args);

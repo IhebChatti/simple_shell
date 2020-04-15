@@ -60,4 +60,8 @@ void signal_handler(int sig);
 
 void free_arr(char **ar);
 
+/* function to print error to stderr */
+
+int p_error(int index, char **args);
+
 #endif
