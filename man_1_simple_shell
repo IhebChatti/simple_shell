@@ -49,6 +49,7 @@ $ cd /home/simple_shell
 $ echo "hello holberton"
 
 .SH COMMANDS EXAMPLES
+
 .SS ls : list all files in the current directory
 
 .SS cd : change the current working directory
@@ -62,6 +63,7 @@ $ echo "hello holberton"
 .SS help : displays information about shell built-in commands
 
 .SH HANDLING SHORTCUTS
+
 .B Ctrl+D : terminates the simple_shell
 
 .B Ctrl+C : prints ^Ĉ and gets the user back to a new line
